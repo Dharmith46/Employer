@@ -23,9 +23,8 @@
         z-index: 1000;
         transition: background 0.3s ease, color 0.3s ease;
       }
-      .header.scrolled {
-        background: #fff;
-        color: #333;
+      .header.scrolled .nav {
+        margin-left: auto;
       }
       .header .container {
         display: flex;
@@ -42,6 +41,7 @@
       .nav {
         display: flex;
         gap: 15px;
+        transition: margin 0.3s ease;
       }
       .nav a {
         color: black;
@@ -109,6 +109,30 @@
         margin: 8px 5px;
         text-align: center;
         transition: transform 0.3s ease, box-shadow 0.1s ease;
+      }
+      .card:nth-child(1) {
+        background: #ffadad;
+      }
+      .card:nth-child(2) {
+        background: #ffd6a5;
+      }
+      .card:nth-child(3) {
+        background: #fdffb6;
+      }
+      .card:nth-child(4) {
+        background: #caffbf;
+      }
+      .card:nth-child(5) {
+        background: #9bf6ff;
+      }
+      .card:nth-child(6) {
+        background: #a0c4ff;
+      }
+      .card:nth-child(7) {
+        background: #bdb2ff;
+      }
+      .card:nth-child(8) {
+        background: #ffc6ff;
       }
       .card:hover {
         transform: scale(1.05);
@@ -209,65 +233,53 @@
       .signup button {
         background-color: #005bb5;
       }
-      /* Footer CSS */
+      @media (max-width: 768px) {
+        .nav {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .card {
+          width: calc(100% - 10px);
+        }
+        .footer-container {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        .footer-section {
+          margin-bottom: 20px;
+        }
+      }
       footer {
-        background-color: #003366;
+        background-color: #333;
         color: #fff;
-        padding: 30px 0;
-        text-align: center;
+        padding: 20px 0;
       }
       .footer-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
       }
       .footer-section {
         flex: 1;
         margin: 10px;
       }
       .footer-section h4 {
-        margin-bottom: 15px;
-        font-size: 1.2em;
-      }
-      .footer-section p,
-      .footer-section ul {
-        margin: 0;
-        font-size: 1em;
-      }
-      .footer-section ul {
-        list-style: none;
-        padding: 0;
-      }
-      .footer-section ul li {
-        margin-bottom: 10px;
+        margin-top: 0;
       }
       .footer-section a {
-        color: #ffcc00;
+        color: #fff;
         text-decoration: none;
-      }
-      .footer-section a:hover {
-        text-decoration: underline;
       }
       .footer-bottom {
-        background-color: #002244;
-        color: #fff;
-        padding: 15px 0;
+        text-align: center;
+        margin-top: 20px;
       }
-      .footer-bottom a {
-        color: #ffcc00;
-        text-decoration: none;
-        margin: 0 5px;
-      }
-      .footer-bottom a:hover {
-        text-decoration: underline;
-      }
-      @media (max-width: 768px) {
-        .card {
-          width: calc(100% - 10px);
-        }
+      .footer-bottom p {
+        margin: 5px 0;
       }
     </style>
   </head>
@@ -434,52 +446,23 @@
 
     <footer>
       <div class="footer-container">
-        <!-- Contact Information -->
         <div class="footer-section">
-          <h4>Contact Us</h4>
-          <p><strong>Phone:</strong> +1 (123) 456-7890</p>
-          <p>
-            <strong>Email:</strong>
-            <a href="mailto:info@aligned.com">info@aligned.com</a>
-          </p>
-          <p><strong>Address:</strong> 123 Business Rd, City, Country</p>
+          <h4>About Aligned</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
-
-        <!-- Quick Links -->
         <div class="footer-section">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact Us</a></li>
-          </ul>
+          <h4>Contact</h4>
+          <p>Email: info@aligned.com</p>
+          <p>Phone: 123-456-7890</p>
         </div>
-
-        <!-- Social Media -->
         <div class="footer-section">
           <h4>Follow Us</h4>
           <a href="#">Facebook</a> | <a href="#">Twitter</a> |
-          <a href="#">LinkedIn</a> |
-          <a href="#">Instagram</a>
-        </div>
-
-        <!-- Newsletter Signup -->
-        <div class="footer-section">
-          <h4>Newsletter Signup</h4>
-          <form action="#" method="post">
-            <input type="email" placeholder="Your email" required />
-            <button type="submit">Subscribe</button>
-          </form>
+          <a href="#">LinkedIn</a>
         </div>
       </div>
-
       <div class="footer-bottom">
         <p>&copy; 2024 Aligned. All rights reserved.</p>
-        <p>
-          <a href="#">Privacy Policy</a> |
-          <a href="#">Terms & Conditions</a>
-        </p>
       </div>
     </footer>
 
