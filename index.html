@@ -4,44 +4,55 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Aligned</title>
+    <!-- Import Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
       /* Existing CSS */
-
       body {
-        font-family: Arial, sans-serif;
+        font-family: "Montserrat", sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #f4faff;
+        background-color: #8adddf;
         color: #333;
       }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Poppins", sans-serif;
+      }
       .header {
-        background: white;
+        background: transparent;
         color: blue;
         padding: 10px 0;
         position: fixed;
         width: 100%;
         z-index: 1000;
-        transition: background 0.3s ease, color 0.3s ease;
-      }
-      .header.scrolled .nav {
-        margin-left: auto;
-      }
-      .header .container {
+        top: 0;
+        left: 0;
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        max-width: 1200px;
-        width: 100%;
-        margin: 0 auto;
+        justify-content: flex-start;
+        box-sizing: border-box; /* Ensure padding is included in width */
+
+        transition: background 0.3s ease; /* Smooth transition for background change */
+      }
+      .header.scrolled {
+        background-color: #ffffff; /* Background color when scrolled */
       }
       .header .logo {
         font-size: 2em;
         font-weight: bold;
+        cursor: pointer;
+        margin-right: 40px;
+        margin-left: 40px;
       }
-      .nav {
+      .header .nav {
         display: flex;
         gap: 15px;
-        transition: margin 0.3s ease;
       }
       .nav a {
         color: black;
@@ -52,6 +63,12 @@
       .nav a:hover,
       .nav a.active {
         background: rgb(236, 232, 232);
+      }
+      .auth {
+        display: flex;
+        gap: 15px;
+        margin-left: auto;
+        margin-right: 20px;
       }
       .auth a {
         color: #fff;
@@ -64,39 +81,19 @@
         background: #005bb5;
       }
       .page-header {
-        position: relative;
         text-align: center;
-        padding: 150px 10px;
+        padding: 150px 10px 100px;
         color: #fff;
-        overflow: hidden;
-      }
-      .page-header::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: linear-gradient(
-            rgba(0, 0, 0, 0.5),
-            rgba(0, 0, 0, 0.5)
-          ),
-          url("images/header.jpg");
-        background-size: cover;
-        background-position: center;
-        z-index: -1;
       }
       .page-header h1 {
         margin: 0;
         font-size: 4em;
-        position: relative;
-        z-index: 1;
       }
       .container {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        width: 90%;
+        justify-content: center; /* Center align cards horizontally */
+        width: 100%;
         max-width: 1200px;
         margin: 30px auto 0;
       }
@@ -104,35 +101,12 @@
         background: white;
         padding: 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 30px;
-        width: calc(45% - 10px);
-        margin: 8px 5px;
+        border-radius: 10px;
+        width: 250px; /* Fixed width for cards */
         text-align: center;
+        cursor: pointer;
         transition: transform 0.3s ease, box-shadow 0.1s ease;
-      }
-      .card:nth-child(1) {
-        background: #ffadad;
-      }
-      .card:nth-child(2) {
-        background: #ffd6a5;
-      }
-      .card:nth-child(3) {
-        background: #fdffb6;
-      }
-      .card:nth-child(4) {
-        background: #caffbf;
-      }
-      .card:nth-child(5) {
-        background: #9bf6ff;
-      }
-      .card:nth-child(6) {
-        background: #a0c4ff;
-      }
-      .card:nth-child(7) {
-        background: #bdb2ff;
-      }
-      .card:nth-child(8) {
-        background: #ffc6ff;
+        margin: 7px; /* Remove margin to ensure no gaps */
       }
       .card:hover {
         transform: scale(1.05);
@@ -147,11 +121,10 @@
         margin: 10px 0;
       }
       .cta-section {
-        padding: 50px 10px;
+        padding: 30px 10px;
         color: #0a0a0a;
         text-align: center;
-        margin-top: 30px;
-        background-color: #f4faff;
+        background-color: #8adddf;
       }
       .cta-section h1 {
         font-size: 2em;
@@ -163,17 +136,16 @@
       }
       .cta-section p {
         font-size: 1.2em;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
       }
       .form-container {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 30px auto;
-        padding: 40px;
+        margin: auto;
+        padding: 10px;
         width: 90%;
         max-width: 800px;
-        background-color: #dbe3ea;
         border-radius: 10px;
       }
       .form-container h3 {
@@ -192,10 +164,10 @@
         border-radius: 20px;
         border: 1px solid #ccc;
         font-size: 1em;
-        font-family: Arial, sans-serif; /* Ensure consistent font */
+        font-family: "Montserrat", sans-serif;
       }
       .form-container textarea {
-        resize: none; /* Prevent resizing */
+        resize: none;
       }
       .form-container button {
         background-color: #0073e6;
@@ -211,9 +183,10 @@
         background-color: #005bb5;
       }
       .signup {
-        background-color: #dbe3ea;
+        background-color: #8adddf;
         color: black;
-        margin-top: 10px;
+        margin-top: 0px;
+        margin-bottom: 50px;
       }
       .signup h3 {
         margin-bottom: 30px;
@@ -234,7 +207,7 @@
           align-items: flex-start;
         }
         .card {
-          width: calc(100% - 10px);
+          width: calc(100% - 20px);
         }
         .footer-container {
           flex-direction: column;
@@ -280,18 +253,18 @@
   </head>
   <body>
     <div class="header">
-      <div class="container">
-        <div class="logo">Aligned</div>
-        <div class="nav">
-          <a href="#">Home</a>
-          <a href="#">Products</a>
-          <a href="#">Pricing</a>
-          <a href="#">Help Center</a>
-        </div>
-        <div class="auth">
-          <a href="#">Login</a>
-          <a href="#">Register</a>
-        </div>
+      <div class="logo" onclick="window.location.href='index.html'">
+        Aligned
+      </div>
+      <div class="nav">
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Pricing</a>
+        <a href="#">Help Center</a>
+      </div>
+      <div class="auth">
+        <a href="#">Login</a>
+        <a href="#">Register</a>
       </div>
     </div>
 
@@ -303,33 +276,43 @@
       <div class="card">
         <h2>Objective Hiring</h2>
         <p>
-          Make data-driven hiring decisions with our comprehensive mix of
-          competency, behavioral, and values-based assessments. Move beyond
-          subjective evaluations and discover candidates who truly align.
+          Our platform ensures your hiring process is free from unconscious
+          biases, providing a fair opportunity for every candidate.
         </p>
       </div>
       <div class="card">
-        <h2>Diverse Talent Pools</h2>
+        <h2>Data-Driven Insights</h2>
+        <p>
+          Make informed hiring decisions backed by comprehensive data and
+          analytics, helping you choose the right talent for your team.
+        </p>
+      </div>
+      <div class="card">
+        <h2>Seamless Integration</h2>
+        <p>
+          Integrate effortlessly with your existing HR systems and workflows,
+          ensuring a smooth transition and unified process.
+        </p>
+      </div>
+      <div class="card">
+        <h2>Diverse Talent Pool</h2>
         <p>
           Unlock opportunities to explore candidates from various industries and
-          prevent skills shortages. Our platform broadens your talent horizon,
-          allowing you to tap into a diverse and skilled workforce.
+          prevent skills shortages.
         </p>
       </div>
       <div class="card">
         <h2>Save Time, Hire Smarter</h2>
         <p>
           Streamline your hiring process, reduce time-to-hire, and minimize
-          costly errors. With Aligned, you interview fewer, but higher-potential
-          candidates.
+          costly errors.
         </p>
       </div>
       <div class="card">
         <h2>Innovative Solutions</h2>
         <p>
           Leverage cutting-edge technology and creative solutions to meet your
-          hiring needs. Our platform continuously evolves to offer the best
-          recruitment solutions.
+          hiring needs.
         </p>
       </div>
     </div>
@@ -359,8 +342,8 @@
         <div class="card">
           <h2>Comprehensive Reports</h2>
           <p>
-            Dive into detailed candidate reports, including skills, behaviors,
-            and values, to make informed hiring decisions.
+            Dive into detailed candidate reports to make informed hiring
+            decisions.
           </p>
         </div>
         <div class="card">
@@ -380,15 +363,18 @@
       </div>
     </div>
 
-    <p class="form-intro">
-      Discover how Aligned can transform your hiring process. Request a demo
-      today to see our advanced recruitment technology in action and learn how
-      our data-driven assessments can help you streamline hiring, reduce
-      time-to-hire, and connect with top talent more effectively. Experience
-      firsthand how Aligned makes hiring smarter and more efficient.
-    </p>
+    <div class="cta-section">
+      <h1>REQUEST A DEMO</h1>
+      <p>
+        Discover how Aligned can transform your hiring process. Request a demo
+        today to see our advanced recruitment technology in action and learn how
+        our data-driven assessments can help you streamline hiring, reduce
+        time-to-hire, and connect with top talent more effectively. Experience
+        firsthand how Aligned makes hiring smarter and more efficient.
+      </p>
+    </div>
+
     <div class="form-container demo-request">
-      <h3>Request a Demo</h3>
       <form>
         <input type="text" placeholder="Full Name" required />
         <input type="email" placeholder="Email" required />
@@ -403,7 +389,6 @@
           <input type="checkbox" id="privacy-checkbox" required />
           I agree to the <a href="#">privacy policy</a>
         </label>
-
         <button type="submit">Request a Demo</button>
       </form>
     </div>
@@ -413,9 +398,6 @@
       <p>
         Ready to revolutionize your hiring process? Sign up with Aligned to
         start leveraging our advanced technology and data-driven assessments.
-        Streamline your recruitment, reduce time-to-hire, and connect with
-        high-potential candidates more effectively. Join us now and experience
-        how Aligned can help you hire smarter and build a stronger team.
       </p>
     </div>
 
@@ -434,7 +416,6 @@
           <input type="checkbox" id="privacy-checkbox" required />
           I agree to the <a href="#">privacy policy</a>
         </label>
-
         <button type="submit">Sign Up</button>
       </form>
     </div>
