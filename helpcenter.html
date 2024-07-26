@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Help Center | Recruitment Platform</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+
+      .header {
+        background: #298bec;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 30px auto;
+        padding: 0 20px;
+      }
+
+      .faq-section,
+      .contact-form-section {
+        background: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .faq-section h2,
+      .contact-form-section h2 {
+        font-family: "Poppins", sans-serif;
+        font-size: 2em;
+        margin-bottom: 10px;
+      }
+
+      .faq-section .faq-item {
+        margin-bottom: 20px;
+      }
+
+      .faq-section .faq-question {
+        font-weight: 700;
+        cursor: pointer;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .faq-section .faq-answer {
+        display: none;
+        padding-left: 20px;
+      }
+
+      .contact-form-section form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .contact-form-section input,
+      .contact-form-section textarea {
+        padding: 15px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 1em;
+        width: 100%;
+      }
+
+      .contact-form-section button {
+        background-color: #298bec;
+        color: white;
+        border: none;
+        padding: 15px;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .contact-form-section button:hover {
+        background-color: #005bb5;
+      }
+
+      @media (max-width: 768px) {
+        .faq-section .faq-question {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Help Center</h1>
+      <p>Your questions answered and support provided.</p>
+    </div>
+
+    <div class="container">
+      <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How do I create an account?</span>
+            <span>&#9654;</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Creating an account is simple. Click on the 'Register' button on
+              the top right corner and fill in the required details.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How do I apply for a job?</span>
+            <span>&#9654;</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Once you have created an account, you can browse job listings and
+              click 'Apply' on any job that interests you.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How do I reset my password?</span>
+            <span>&#9654;</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              To reset your password, click on 'Forgot Password' on the login
+              page and follow the instructions.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-section">
+        <h2>Contact Us</h2>
+        <form action="submit_contact_form.php" method="post">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var faqItems = document.querySelectorAll(".faq-question");
+        faqItems.forEach(function (item) {
+          item.addEventListener("click", function () {
+            var answer = this.nextElementSibling;
+            var icon = this.querySelector("span:last-child");
+            if (answer.style.display === "block") {
+              answer.style.display = "none";
+              icon.innerHTML = "&#9654;";
+            } else {
+              answer.style.display = "block";
+              icon.innerHTML = "&#9660;";
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
