@@ -32,11 +32,11 @@
         color: blue;
         padding: 10px 20px;
         display: flex;
-        justify-content: space-between;
         align-items: center;
         z-index: 1000;
         box-sizing: border-box;
         transition: background 0.3s ease;
+        justify-content: space-between;
       }
       .header.scrolled {
         background-color: #ffffff;
@@ -83,10 +83,11 @@
         text-align: center;
         padding: 150px 10px 100px;
         color: #fff;
+        margin-top: 70px; /* Space for fixed header */
       }
       .page-header h1 {
         margin: 0;
-        font-size: 4em;
+        font-size: 2.5em;
       }
       .container {
         display: flex;
@@ -95,17 +96,18 @@
         width: 100%;
         max-width: 1200px;
         margin: 30px auto 0;
+        padding: 0 10px;
       }
       .card {
         background: white;
         padding: 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
-        width: calc(33.333% - 20px);
+        width: calc(100% - 20px);
         text-align: center;
         cursor: pointer;
         transition: transform 0.3s ease, box-shadow 0.1s ease;
-        margin: 10px;
+        margin: 10px 0;
       }
       .card:hover {
         transform: scale(1.05);
@@ -202,47 +204,48 @@
       }
       @media (max-width: 768px) {
         .header {
-          position: relative;
+          flex-direction: column;
+          align-items: flex-start;
           padding: 10px;
         }
         .header .logo {
           font-size: 1.5em;
+          margin-bottom: 10px;
         }
         .header .menu-toggle {
           display: block;
         }
         .header .nav {
           display: none;
+          flex-direction: column;
+          width: 100%;
+          position: absolute;
+          top: 60px;
+          left: 0;
+          background-color: #ffffff;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          padding: 10px 0;
         }
         .nav.active {
           display: flex;
-          flex-direction: column;
-          position: fixed;
-          top: 60px;
-          left: 0;
-          width: 100%;
-          background: #ffffff;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          padding: 10px 0;
-          z-index: 1001;
         }
         .nav a {
           padding: 15px;
           text-align: center;
+          border-bottom: 1px solid #ccc;
+        }
+        .nav a:last-child {
+          border-bottom: none;
+        }
+        .page-header {
+          margin-top: 70px;
+          padding: 100px 10px;
+        }
+        .page-header h1 {
+          font-size: 2em;
         }
         .container {
           margin-top: 70px;
-        }
-        .card {
-          width: calc(100% - 20px);
-        }
-        .footer-container {
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-        }
-        .footer-section {
-          margin-bottom: 20px;
         }
       }
       footer {
@@ -280,10 +283,10 @@
   </head>
   <body>
     <div class="header">
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
       <div class="logo" onclick="window.location.href='index.html'">
         ALIGNED
       </div>
-      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
       <div class="nav" id="nav-menu">
         <a href="#">Home</a>
         <a href="#">Products</a>
@@ -297,12 +300,13 @@
     </div>
 
     <div class="page-header">
-      <h1>TRANSFORMING YOUR HIRING EXPERIENCE!</h1>
+      <h1>Transform Your Hiring Process with Aligned</h1>
+      <p>Advanced recruitment technology for smarter hiring decisions.</p>
     </div>
 
     <div class="container">
       <div class="card">
-        <h2>Objective Hiring</h2>
+        <h2>Bias-Free Hiring</h2>
         <p>
           Our platform ensures your hiring process is free from unconscious
           biases, providing a fair opportunity for every candidate.
