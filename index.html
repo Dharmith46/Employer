@@ -63,6 +63,28 @@
         display: flex;
         gap: 15px;
       }
+      .register-button {
+        background-color: #298bec; /* Blue color for Register button */
+        color: white;
+        padding: 10px 15px; /* Adjust padding as needed */
+        border-radius: 5px;
+        text-decoration: none;
+      }
+
+      .register-button:hover {
+        background-color: #005bb5; /* Darker blue on hover */
+      }
+      .login-button {
+        background-color: #298bec; /* Blue color for Register button */
+        color: white;
+        padding: 10px 15px; /* Adjust padding as needed */
+        border-radius: 5px;
+        text-decoration: none;
+      }
+
+      .login-button:hover {
+        background-color: #005bb5; /* Darker blue on hover */
+      }
 
       .nav a,
       .auth a {
@@ -77,9 +99,35 @@
       .auth a:hover {
         background: rgb(236, 232, 232);
       }
+      .demo-button {
+        background-color: orange; /* Blue color */
+        color: white;
+        font-weight: bold;
+        padding: 10px 15px; /* Adjust padding as needed */
+        border-radius: 5px;
+        text-decoration: none;
+      }
 
-      .auth {
-        margin-right: 20px;
+      .demo-button:hover {
+        background-color: grey; /* Darker blue on hover */
+      }
+      /* Offset the scroll position to account for the fixed header */
+      #demo-request-form {
+        scroll-margin-top: 70px; /* Adjust this value to match the height of your header */
+      }
+
+      .login-button,
+      .register-button {
+        background-color: #298bec; /* Blue color for Login and Register buttons */
+        color: white;
+        padding: 10px 15px; /* Adjust padding as needed */
+        border-radius: 5px;
+        text-decoration: none;
+      }
+
+      .login-button:hover,
+      .register-button:hover {
+        background-color: #005bb5; /* Darker blue on hover */
       }
 
       .menu-toggle {
@@ -126,7 +174,7 @@
 
       .page-header {
         text-align: center;
-        padding: 150px 10px 100px;
+        padding: 262px 10px 262px;
         color: black;
         font-size: 1.5em;
       }
@@ -149,12 +197,12 @@
         background: white;
         padding: 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
+        border-radius: 30px;
         width: 250px;
         text-align: center;
         cursor: pointer;
         transition: transform 0.3s ease, box-shadow 0.1s ease;
-        margin: 7px;
+        margin: 10px;
       }
 
       .card:hover {
@@ -172,23 +220,31 @@
         margin: 10px 0;
       }
 
-      .cta-section {
+      .cta-section1,
+      .cta-section2,
+      .cta-section3 {
         padding: 30px 10px;
         color: #0a0a0a;
         text-align: center;
       }
 
-      .cta-section h1 {
+      .cta-section1,
+      .cta-section2,
+      .cta-section3 h1 {
         font-size: 2em;
         margin-bottom: 10px;
       }
 
-      .cta-section h2 {
+      .cta-section1,
+      .cta-section2,
+      .cta-section3 h2 {
         font-size: 1.5em;
         margin-bottom: 10px;
       }
 
-      .cta-section p {
+      .cta-section1,
+      .cta-section2,
+      .cta-section3 p {
         font-size: 1.2em;
         margin-bottom: 10px;
       }
@@ -349,6 +405,53 @@
       .footer-bottom p {
         margin: 5px 0;
       }
+
+      /* General section styling */
+      .section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 40px; /* Remove padding */
+        margin: 0; /* Remove margin */
+        color: white;
+        text-align: left; /* Align text to the left */
+        gap: 100px; /* Add space between image and text */
+      }
+
+      /* Specific styles for the section image and content */
+      .section img {
+        max-width: 50%; /* Ensure the image takes up half of the section width */
+        height: auto; /* Maintain aspect ratio */
+      }
+
+      .section-content {
+        flex: 1;
+        padding: 20px; /* Padding around the text content */
+        max-width: 50%; /* Ensure content takes up the remaining half of the width */
+      }
+
+      /* Individual section styles */
+      .section-1 {
+        background-color: white;
+        color: black;
+        font-size: 1.5em;
+      }
+
+      .section-2 {
+        background-color: #c3ebfd;
+        color: black;
+        font-size: 1.5em;
+      }
+
+      .section-2 img {
+        max-width: 50%; /* Make the image larger */
+      }
+
+      .section-3 {
+        background-color: white;
+        color: black;
+        font-size: 1.5em;
+      }
     </style>
   </head>
   <body>
@@ -359,19 +462,24 @@
       </div>
       <div class="nav">
         <a href="#">Home</a>
-        <a href="#">Products</a>
         <a href="#">Pricing</a>
         <a href="#">Help Center</a>
+        <a href="#cta-section2" class="demo-button">Request a Demo</a>
+        <!-- Updated href -->
+        <!-- New button here -->
       </div>
       <div class="auth">
-        <a href="#"><strong>Login</strong></a>
-        <a href="#"><strong>Register</strong></a>
+        <a href="#login.html" class="login-button"><strong>Login</strong></a>
+        <a href="#cta-section3" class="register-button"
+          ><strong>Register</strong></a
+        >
       </div>
     </div>
 
     <div class="menu-popup" id="menu-popup">
       <div class="close-menu" onclick="toggleMenu()">×</div>
-      <a href="#">Home</a>
+      <a href="index.html">Home</a
+      ><https://landingpage.idrisforid.com/index.html#>
       <a href="#">Products</a>
       <a href="#">Pricing</a>
       <a href="#">Help Center</a>
@@ -383,52 +491,41 @@
       <h1>TRANSFORMING YOUR HIRING EXPERIENCE!</h1>
     </div>
 
-    <div class="container">
-      <div class="card">
+    <div class="section section-1">
+      <img src="images/objective.jpg" alt="Objective Hiring" />
+      <div class="section-content">
         <h2>Objective Hiring</h2>
         <p>
           Our platform ensures your hiring process is free from unconscious
           biases, providing a fair opportunity for every candidate.
         </p>
       </div>
-      <div class="card">
-        <h2>Data-Driven Insights</h2>
-        <p>
-          Make informed hiring decisions backed by comprehensive data and
-          analytics, helping you choose the right talent for your team.
-        </p>
-      </div>
-      <div class="card">
-        <h2>Seamless Integration</h2>
-        <p>
-          Integrate effortlessly with your existing HR systems and workflows,
-          ensuring a smooth transition and unified process.
-        </p>
-      </div>
-      <div class="card">
-        <h2>Diverse Talent Pool</h2>
+    </div>
+
+    <div class="section section-2">
+      <div class="section-content">
+        <h1>Diverse Talent Pool</h1>
         <p>
           Unlock opportunities to explore candidates from various industries and
-          prevent skills shortages.
+          prevent skills shortages. Our platform broadens your talent horizon,
+          allowing you to tap into a diverse and skilled workforce.
         </p>
       </div>
-      <div class="card">
+      <img src="images/diverse.jpg" alt="Diverse Talent Pool" />
+    </div>
+
+    <div class="section section-3">
+      <img src="images/savetime.jpg" alt="Save Time, Hire Smarter" />
+      <div class="section-content">
         <h2>Save Time, Hire Smarter</h2>
         <p>
           Streamline your hiring process, reduce time-to-hire, and minimize
           costly errors.
         </p>
       </div>
-      <div class="card">
-        <h2>Innovative Solutions</h2>
-        <p>
-          Leverage cutting-edge technology and creative solutions to meet your
-          hiring needs.
-        </p>
-      </div>
     </div>
 
-    <div class="cta-section">
+    <div class="cta-section1">
       <h1>READY TO TRANSFORM YOUR RECRUITMENT STRATEGY?</h1>
       <p>
         Embark on a new era of efficient, objective, and diverse hiring. Join
@@ -437,35 +534,35 @@
       <h2>HOW IT WORKS?</h2>
       <div class="container">
         <div class="card">
-          <h2>Job Posting</h2>
+          <h2>1. Job Posting</h2>
           <p>
             Create job postings with ease, showcasing the essence of the role,
             required skills, and team values.
           </p>
         </div>
         <div class="card">
-          <h2>Candidate Applications</h2>
+          <h2>2. Candidate Applications</h2>
           <p>
             Receive applications filtered based on assessments, ensuring you
             connect with candidates who align.
           </p>
         </div>
         <div class="card">
-          <h2>Comprehensive Reports</h2>
+          <h2>3. Comprehensive Reports</h2>
           <p>
             Dive into detailed candidate reports to make informed hiring
             decisions.
           </p>
         </div>
         <div class="card">
-          <h2>Talent Search</h2>
+          <h2>4. Talent Search</h2>
           <p>
             Proactively build a talent pool by searching for passive candidates
             based on their skills, behaviors, and values.
           </p>
         </div>
         <div class="card">
-          <h2>Interview Tracking</h2>
+          <h2>5. Interview Tracking</h2>
           <p>
             Streamline your interview process by scheduling and tracking
             candidate progress directly through the platform.
@@ -474,7 +571,7 @@
       </div>
     </div>
 
-    <div class="cta-section">
+    <div class="cta-section2" id="demo-request">
       <h1>REQUEST A DEMO</h1>
       <p>
         Discover how Aligned can transform your hiring process. Request a demo
@@ -485,7 +582,7 @@
       </p>
     </div>
 
-    <div class="form-container demo-request">
+    <div class="form-container demo-request" id="demo-request-form">
       <form>
         <input type="text" placeholder="Full Name" required />
         <input type="email" placeholder="Email" required />
@@ -504,7 +601,7 @@
       </form>
     </div>
 
-    <div class="cta-section">
+    <div class="cta-section3">
       <h1>READY TO JOIN US?</h1>
       <p>
         Ready to revolutionize your hiring process? Sign up with Aligned to
@@ -512,7 +609,7 @@
       </p>
     </div>
 
-    <div class="form-container signup">
+    <div class="form-container signup" id="signup-form">
       <h3>Sign Up</h3>
       <form>
         <input type="text" placeholder="Full Name" required />
@@ -587,6 +684,36 @@
         } else if (window.innerWidth > 768) {
           header.classList.remove("scrolled");
         }
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        // Smooth scrolling with offset
+        const scrollToElement = (selector, offset = 70) => {
+          const element = document.querySelector(selector);
+          if (element) {
+            const elementPosition =
+              element.getBoundingClientRect().top + window.pageYOffset;
+            window.scrollTo({
+              top: elementPosition - offset,
+              behavior: "smooth",
+            });
+          }
+        };
+
+        // Handle click event for demo request button
+        document
+          .querySelector(".demo-button")
+          .addEventListener("click", function (e) {
+            e.preventDefault(); // Prevent default anchor behavior
+            scrollToElement("#demo-request-form"); // Adjust selector as needed
+          });
+
+        // Handle click event for register button
+        document
+          .querySelector(".register-button")
+          .addEventListener("click", function (e) {
+            e.preventDefault(); // Prevent default anchor behavior
+            scrollToElement("#signup-form"); // Adjust selector as needed
+          });
       });
     </script>
   </body>
