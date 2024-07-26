@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
     <style>
+      /* Existing CSS */
       body {
         font-family: "Montserrat", sans-serif;
         margin: 0;
@@ -24,19 +25,19 @@
         font-family: "Poppins", sans-serif;
       }
       .header {
+        background: transparent;
+        color: blue;
+        padding: 10px 0;
         position: fixed;
+        width: 100%;
+        z-index: 1000;
         top: 0;
         left: 0;
-        width: 100%;
-        background-color: transparent;
-        color: blue;
-        padding: 10px 20px;
         display: flex;
         align-items: center;
-        z-index: 1000;
+        justify-content: space-between; /* Align logo and toggle to left, and menu to right */
         box-sizing: border-box;
         transition: background 0.3s ease;
-        justify-content: space-between;
       }
       .header.scrolled {
         background-color: #ffffff;
@@ -45,11 +46,7 @@
         font-size: 2em;
         font-weight: bold;
         cursor: pointer;
-      }
-      .header .menu-toggle {
-        display: none;
-        font-size: 2em;
-        cursor: pointer;
+        margin-left: 20px;
       }
       .header .nav {
         display: flex;
@@ -68,6 +65,7 @@
       .auth {
         display: flex;
         gap: 15px;
+        margin-right: 20px;
       }
       .auth a {
         color: #fff;
@@ -79,15 +77,51 @@
       .auth a:hover {
         background: #005bb5;
       }
+      .menu-toggle {
+        display: none;
+        font-size: 1.5em;
+        cursor: pointer;
+        margin-left: 20px;
+      }
+      .menu-popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100%;
+        background: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        z-index: 1001;
+        overflow-y: auto;
+      }
+      .menu-popup.active {
+        display: block;
+      }
+      .menu-popup a {
+        display: block;
+        padding: 15px;
+        color: black;
+        text-decoration: none;
+        border-bottom: 1px solid #ddd;
+      }
+      .menu-popup a:hover {
+        background: rgb(236, 232, 232);
+      }
+      .close-menu {
+        font-size: 1.5em;
+        cursor: pointer;
+        text-align: right;
+      }
       .page-header {
         text-align: center;
         padding: 150px 10px 100px;
         color: #fff;
-        margin-top: 70px; /* Space for fixed header */
       }
       .page-header h1 {
         margin: 0;
-        font-size: 2.5em;
+        font-size: 4em;
       }
       .container {
         display: flex;
@@ -96,18 +130,17 @@
         width: 100%;
         max-width: 1200px;
         margin: 30px auto 0;
-        padding: 0 10px;
       }
       .card {
         background: white;
         padding: 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
-        width: calc(100% - 20px);
+        width: 250px;
         text-align: center;
         cursor: pointer;
         transition: transform 0.3s ease, box-shadow 0.1s ease;
-        margin: 10px 0;
+        margin: 7px;
       }
       .card:hover {
         transform: scale(1.05);
@@ -203,49 +236,19 @@
         background-color: #005bb5;
       }
       @media (max-width: 768px) {
-        .header {
+        .nav {
+          display: none; /* Hide the desktop navigation */
+        }
+        .menu-toggle {
+          display: block; /* Show the menu toggle */
+        }
+        .footer-container {
           flex-direction: column;
-          align-items: flex-start;
-          padding: 10px;
-        }
-        .header .logo {
-          font-size: 1.5em;
-          margin-bottom: 10px;
-        }
-        .header .menu-toggle {
-          display: block;
-        }
-        .header .nav {
-          display: none;
-          flex-direction: column;
-          width: 100%;
-          position: absolute;
-          top: 60px;
-          left: 0;
-          background-color: #ffffff;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          padding: 10px 0;
-        }
-        .nav.active {
-          display: flex;
-        }
-        .nav a {
-          padding: 15px;
+          align-items: center;
           text-align: center;
-          border-bottom: 1px solid #ccc;
         }
-        .nav a:last-child {
-          border-bottom: none;
-        }
-        .page-header {
-          margin-top: 70px;
-          padding: 100px 10px;
-        }
-        .page-header h1 {
-          font-size: 2em;
-        }
-        .container {
-          margin-top: 70px;
+        .footer-section {
+          margin-bottom: 20px;
         }
       }
       footer {
@@ -287,26 +290,33 @@
       <div class="logo" onclick="window.location.href='index.html'">
         ALIGNED
       </div>
-      <div class="nav" id="nav-menu">
+      <div class="nav">
         <a href="#">Home</a>
         <a href="#">Products</a>
         <a href="#">Pricing</a>
         <a href="#">Help Center</a>
-        <div class="auth">
-          <a href="#">Login</a>
-          <a href="#">Register</a>
-        </div>
+      </div>
+      <div class="auth">
+        <a href="#">Login</a>
+        <a href="#">Register</a>
       </div>
     </div>
 
+    <div class="menu-popup" id="menu-popup">
+      <div class="close-menu" onclick="toggleMenu()">×</div>
+      <a href="#">Home</a>
+      <a href="#">Products</a>
+      <a href="#">Pricing</a>
+      <a href="#">Help Center</a>
+    </div>
+
     <div class="page-header">
-      <h1>Transform Your Hiring Process with Aligned</h1>
-      <p>Advanced recruitment technology for smarter hiring decisions.</p>
+      <h1>TRANSFORMING YOUR HIRING EXPERIENCE!</h1>
     </div>
 
     <div class="container">
       <div class="card">
-        <h2>Bias-Free Hiring</h2>
+        <h2>Objective Hiring</h2>
         <p>
           Our platform ensures your hiring process is free from unconscious
           biases, providing a fair opportunity for every candidate.
@@ -475,6 +485,11 @@
     </footer>
 
     <script>
+      function toggleMenu() {
+        const menuPopup = document.getElementById("menu-popup");
+        menuPopup.classList.toggle("active");
+      }
+
       document.addEventListener("scroll", function () {
         var header = document.querySelector(".header");
         if (window.scrollY > 50) {
@@ -483,11 +498,6 @@
           header.classList.remove("scrolled");
         }
       });
-
-      function toggleMenu() {
-        var navMenu = document.getElementById("nav-menu");
-        navMenu.classList.toggle("active");
-      }
     </script>
   </body>
 </html>
