@@ -11,7 +11,6 @@
     />
     <style>
       /* Existing CSS */
-      /* Existing CSS */
       body {
         font-family: "Montserrat", sans-serif;
         margin: 0;
@@ -48,6 +47,7 @@
         font-weight: bold;
         cursor: pointer;
         margin-left: 20px;
+        margin-right: 20px;
       }
       .header .nav,
       .header .auth {
@@ -237,6 +237,12 @@
         }
         .menu-toggle {
           display: block; /* Show the menu toggle */
+        }
+        .header {
+          justify-content: center; /* Center the logo */
+        }
+        .header .logo {
+          margin: 0; /* Remove margins for center alignment */
         }
         .page-header {
           padding: 80px 10px 30px; /* Adjust padding for mobile */
@@ -498,8 +504,13 @@
         var header = document.querySelector(".header");
         if (window.scrollY > 50) {
           header.classList.add("scrolled");
+          if (window.innerWidth <= 768) {
+            // Apply the scroll hide effect only on mobile
+            header.style.top = "-60px"; // Adjust this value to the height of your header
+          }
         } else {
           header.classList.remove("scrolled");
+          header.style.top = "0";
         }
       });
     </script>
