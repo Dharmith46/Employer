@@ -37,6 +37,8 @@
         color: blue;
         padding: 10px 20px; /* Adjusted padding */
         position: fixed;
+        height: 70px; /* Example fixed height */
+        line-height: 70px; /* Align text vertically */
         width: 100%;
         z-index: 1000;
         top: 0;
@@ -692,9 +694,11 @@
 
         if (window.innerWidth <= 768) {
           // Mobile
+          const headerHeight = header.offsetHeight; // Dynamically get header height
+
           if (currentScroll > lastScrollTop) {
             // Scrolling down
-            header.style.top = "-60px"; // Adjust this value to the height of your header
+            header.style.top = `-${headerHeight}px`; // Use headerHeight
           } else {
             // Scrolling up
             header.style.top = "0";
@@ -703,13 +707,13 @@
         } else {
           // Desktop
           header.style.top = "0"; // Ensure header is always visible
-        }
 
-        // For desktop, handle header background color change on scroll
-        if (window.scrollY > 50 && window.innerWidth > 768) {
-          header.classList.add("scrolled");
-        } else if (window.innerWidth > 768) {
-          header.classList.remove("scrolled");
+          // For desktop, handle header background color change on scroll
+          if (window.scrollY > 50) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
         }
       });
 
