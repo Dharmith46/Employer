@@ -63,31 +63,14 @@
         display: flex;
         gap: 15px;
       }
-      .register-button {
-        background-color: #298bec; /* Blue color for Register button */
-        color: white;
-        padding: 10px 15px; /* Adjust padding as needed */
-        border-radius: 5px;
+      .nav a {
+        color: black;
         text-decoration: none;
-      }
-
-      .register-button:hover {
-        background-color: #005bb5; /* Darker blue on hover */
-      }
-      .login-button {
-        background-color: #298bec; /* Blue color for Register button */
-        color: white;
-        padding: 10px 15px; /* Adjust padding as needed */
+        padding: 10px;
         border-radius: 5px;
-        text-decoration: none;
       }
-
-      .login-button:hover {
-        background-color: #005bb5; /* Darker blue on hover */
-      }
-
-      .nav a,
       .auth a {
+        background-color: white;
         color: black;
         text-decoration: none;
         padding: 10px;
@@ -95,9 +78,11 @@
       }
 
       .nav a:hover,
-      .nav a.active,
+      .nav a.active {
+        background: white;
+      }
       .auth a:hover {
-        background: rgb(236, 232, 232);
+        background: blue;
       }
       .demo-button {
         background-color: orange; /* Blue color */
@@ -109,27 +94,12 @@
       }
 
       .demo-button:hover {
-        background-color: grey; /* Darker blue on hover */
+        background-color: darkorange; /* Darker blue on hover */
       }
       /* Offset the scroll position to account for the fixed header */
       #demo-request-form {
         scroll-margin-top: 70px; /* Adjust this value to match the height of your header */
       }
-
-      .login-button,
-      .register-button {
-        background-color: #298bec; /* Blue color for Login and Register buttons */
-        color: white;
-        padding: 10px 15px; /* Adjust padding as needed */
-        border-radius: 5px;
-        text-decoration: none;
-      }
-
-      .login-button:hover,
-      .register-button:hover {
-        background-color: #005bb5; /* Darker blue on hover */
-      }
-
       .menu-toggle {
         display: none;
         font-size: 1.5em;
@@ -339,7 +309,9 @@
       }
       .footer-left {
         flex: 1; /* Equal width for each section */
-        margin: 0 120px; /* Space between sections */
+        margin: auto 120px; /* Space between sections */
+        font-size: 1.5em;
+        color: blue;
       }
       .footer-center,
       .footer-right {
@@ -470,18 +442,22 @@
         padding: 20px; /* Padding around the text content */
         max-width: 50%; /* Ensure content takes up the remaining half of the width */
       }
+      .section h2 {
+        font-size: 2em;
+      }
+      .section p {
+        font-size: 1.2em;
+      }
 
       /* Individual section styles */
       .section-1 {
         background-color: white;
         color: black;
-        font-size: 1.5em;
       }
 
       .section-2 {
         background-color: #c3ebfd;
         color: black;
-        font-size: 1.5em;
       }
 
       .section-2 img {
@@ -491,7 +467,6 @@
       .section-3 {
         background-color: white;
         color: black;
-        font-size: 1.5em;
       }
     </style>
   </head>
@@ -508,7 +483,7 @@
         <a href="https://landingpage.idrisforid.com/index.html">Home</a>
         <a href="pricing.html">Pricing</a>
         <a href="helpcenter.html">Help Center</a>
-        <a href="#" class="demo-button">Request a Demo</a>
+        <a href="demo-request-form" class="demo-button">Request a Demo</a>
         <!-- Updated href -->
         <!-- New button here -->
       </div>
@@ -545,7 +520,7 @@
 
     <div class="section section-2">
       <div class="section-content">
-        <h1>Diverse Talent Pool</h1>
+        <h2>Diverse Talent Pool</h2>
         <p>
           Unlock opportunities to explore candidates from various industries and
           prevent skills shortages. Our platform broadens your talent horizon,
@@ -612,7 +587,7 @@
       </div>
     </div>
 
-    <div class="cta-section2" id="demo-request">
+    <div class="cta-section2" id="demo-request-form">
       <h1>REQUEST A DEMO</h1>
       <p>
         Discover how Aligned can transform your hiring process. Request a demo
@@ -623,7 +598,7 @@
       </p>
     </div>
 
-    <div class="form-container demo-request" id="demo-request-form">
+    <div class="form-container demo-request">
       <form>
         <input type="text" placeholder="Full Name" required />
         <input type="email" placeholder="Email" required />
@@ -642,7 +617,7 @@
       </form>
     </div>
 
-    <div class="cta-section3">
+    <div class="cta-section3" id="signup-form">
       <h1>READY TO JOIN US?</h1>
       <p>
         Ready to revolutionize your hiring process? Sign up with Aligned to
@@ -650,7 +625,7 @@
       </p>
     </div>
 
-    <div class="form-container signup" id="signup-form">
+    <div class="form-container signup">
       <h3>Sign Up</h3>
       <form>
         <input type="text" placeholder="Full Name" required />
@@ -673,27 +648,22 @@
       <div class="footer-container">
         <!-- Left Section: About Aligned -->
         <div class="footer-left">
-          <h4>About Aligned</h4>
-          <p>
-            Aligned revolutionizes recruitment with advanced technology and
-            data-driven assessments, helping companies streamline hiring and
-            build diverse, high-performing teams efficiently.
-          </p>
+          <h1>ALIGNED</h1>
+          <p></p>
         </div>
 
         <!-- Center Section: Quick Links -->
         <div class="footer-center">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Demo Request</a></li>
-            <li><a href="#">Register</a></li>
-            <li><a href="#">Help Cente</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="#" class="footer-demo-button">Demo Request</a></li>
+            <li><a href="#" class="footer-register-button">Register</a></li>
+            <li><a href="helpcenter.html">Help Center</a></li>
           </ul>
         </div>
 
         <!-- Right Section: Help Center and Legal -->
-
         <div class="footer-right">
           <h4>Legal</h4>
           <ul>
@@ -742,6 +712,7 @@
           header.classList.remove("scrolled");
         }
       });
+
       document.addEventListener("DOMContentLoaded", function () {
         // Smooth scrolling with offset
         const scrollToElement = (selector, offset = 70) => {
@@ -756,21 +727,27 @@
           }
         };
 
-        // Handle click event for demo request button
-        document
-          .querySelector(".demo-button")
-          .addEventListener("click", function (e) {
+        // Handle click event for demo request button (header and footer)
+        const demoButtons = document.querySelectorAll(
+          ".demo-button, .footer-demo-button"
+        );
+        demoButtons.forEach((button) => {
+          button.addEventListener("click", function (e) {
             e.preventDefault(); // Prevent default anchor behavior
             scrollToElement("#demo-request-form"); // Adjust selector as needed
           });
+        });
 
-        // Handle click event for register button
-        document
-          .querySelector(".register-button")
-          .addEventListener("click", function (e) {
+        // Handle click event for register button (header and footer)
+        const registerButtons = document.querySelectorAll(
+          ".register-button, .footer-register-button"
+        );
+        registerButtons.forEach((button) => {
+          button.addEventListener("click", function (e) {
             e.preventDefault(); // Prevent default anchor behavior
             scrollToElement("#signup-form"); // Adjust selector as needed
           });
+        });
       });
     </script>
   </body>
