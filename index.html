@@ -321,6 +321,83 @@
       .signup button {
         background-color: #005bb5;
       }
+      footer {
+        background: url("https://www.transparenttextures.com/patterns/asfalt.png"); /* URL to a texture pattern */
+        color: black;
+        padding: 20px 0; /* Padding around footer */
+        font-size: 1em; /* Slightly smaller font size */
+      }
+
+      .footer-container {
+        display: flex; /* Flexbox layout for horizontal alignment */
+        justify-content: space-between; /* Space out the sections */
+        align-items: flex-start; /* Align items to the top */
+        flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
+        width: 90%; /* Max width for the container */
+        max-width: 1200px; /* Ensure it doesn’t stretch too wide */
+        margin: 0 auto; /* Center the container horizontally */
+      }
+      .footer-left {
+        flex: 1; /* Equal width for each section */
+        margin: 0 120px; /* Space between sections */
+      }
+      .footer-center,
+      .footer-right {
+        flex: 1; /* Equal width for each section */
+        margin: 0 0px; /* Space between sections */
+      }
+
+      .footer-left h4,
+      .footer-center h4,
+      .footer-right h4 {
+        margin-top: 0; /* Remove top margin */
+        margin-bottom: 15px; /* Space below heading */
+        text-decoration: underline; /* Underline the headings */
+      }
+
+      .footer-left p,
+      .footer-center ul,
+      .footer-right ul {
+        margin: 0; /* Remove default margin */
+        padding: 0; /* Remove default padding */
+      }
+
+      .footer-center ul,
+      .footer-right ul {
+        list-style: none; /* Remove default list styling */
+        padding: 0; /* Remove default padding */
+      }
+
+      .footer-center ul li,
+      .footer-right ul li {
+        margin-bottom: 10px; /* Space between list items */
+      }
+
+      .footer-center ul li::before {
+        content: "• "; /* Bullet point */
+        color: black; /* White color for bullet */
+        font-weight: bold; /* Bold bullet point */
+      }
+
+      .footer-center a,
+      .footer-right a {
+        color: black; /* White color for links */
+        text-decoration: none; /* Remove underline from links */
+      }
+
+      .footer-center a:hover,
+      .footer-right a:hover {
+        text-decoration: underline; /* Underline on hover */
+      }
+
+      .footer-bottom {
+        text-align: center; /* Center the text */
+        margin-top: 20px; /* Space above the footer bottom */
+      }
+
+      .footer-bottom p {
+        margin: 5px 0; /* Space around the paragraph */
+      }
 
       /* Mobile styles */
       @media (max-width: 768px) {
@@ -358,52 +435,16 @@
         }
 
         .footer-container {
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
+          flex-direction: column; /* Stack sections vertically */
+          align-items: center; /* Center-align sections */
         }
 
-        .footer-section {
-          margin-bottom: 20px;
+        .footer-left,
+        .footer-center,
+        .footer-right {
+          text-align: center; /* Center-align text */
+          margin: 10px 0; /* Space between stacked sections */
         }
-      }
-
-      footer {
-        background-color: #333;
-        color: #fff;
-        padding: 20px 0;
-      }
-
-      .footer-container {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        width: 90%;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .footer-section {
-        flex: 1;
-        margin: 10px;
-      }
-
-      .footer-section h4 {
-        margin-top: 0;
-      }
-
-      .footer-section a {
-        color: #fff;
-        text-decoration: none;
-      }
-
-      .footer-bottom {
-        text-align: center;
-        margin-top: 20px;
-      }
-
-      .footer-bottom p {
-        margin: 5px 0;
       }
 
       /* General section styling */
@@ -630,19 +671,35 @@
 
     <footer>
       <div class="footer-container">
-        <div class="footer-section">
+        <!-- Left Section: About Aligned -->
+        <div class="footer-left">
           <h4>About Aligned</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>
+            Aligned revolutionizes recruitment with advanced technology and
+            data-driven assessments, helping companies streamline hiring and
+            build diverse, high-performing teams efficiently.
+          </p>
         </div>
-        <div class="footer-section">
-          <h4>Contact</h4>
-          <p>Email: info@aligned.com</p>
-          <p>Phone: 123-456-7890</p>
+
+        <!-- Center Section: Quick Links -->
+        <div class="footer-center">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Demo Request</a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="#">Help Cente</a></li>
+          </ul>
         </div>
-        <div class="footer-section">
-          <h4>Follow Us</h4>
-          <a href="#">Facebook</a> | <a href="#">Twitter</a> |
-          <a href="#">LinkedIn</a>
+
+        <!-- Right Section: Help Center and Legal -->
+
+        <div class="footer-right">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
         </div>
       </div>
       <div class="footer-bottom">
