@@ -37,8 +37,6 @@
         color: blue;
         padding: 10px 20px; /* Adjusted padding */
         position: fixed;
-        height: 70px; /* Example fixed height */
-        line-height: 70px; /* Align text vertically */
         width: 100%;
         z-index: 1000;
         top: 0;
@@ -419,36 +417,30 @@
           text-align: center; /* Center-align text */
           margin: 10px 0; /* Space between stacked sections */
         }
-      }
 
-      /* General section styling */
-      .section {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 40px; /* Remove padding */
-        margin: 0; /* Remove margin */
-        color: white;
-        text-align: left; /* Align text to the left */
-        gap: 100px; /* Add space between image and text */
-      }
+        /* Stack section content vertically on mobile */
+        .section {
+          flex-direction: column;
+          align-items: center; /* Center-align content */
+          text-align: center; /* Center text */
+          padding: 20px; /* Adjust padding for mobile */
+          gap: 20px; /* Space between image and text */
+        }
 
-      /* Specific styles for the section image and content */
-      .section img {
-        max-width: 50%; /* Ensure the image takes up half of the section width */
-        height: auto; /* Maintain aspect ratio */
-      }
+        .section img {
+          max-width: 100%; /* Ensure images fit within the container */
+          height: auto; /* Maintain aspect ratio */
+        }
 
-      .section-content {
-        flex: 1;
-        padding: 20px; /* Padding around the text content */
-        max-width: 50%; /* Ensure content takes up the remaining half of the width */
-      }
-      .section h2 {
-        font-size: 2em;
-      }
-      .section p {
-        font-size: 1.2em;
+        .section-content {
+          padding: 0; /* Remove padding on mobile */
+        }
+        .section h2 {
+          font-size: 2em;
+        }
+        .section p {
+          font-size: 1.2em;
+        }
       }
 
       /* Individual section styles */
@@ -469,6 +461,49 @@
       .section-3 {
         background-color: white;
         color: black;
+      }
+
+      /* Desktop styles */
+      @media (min-width: 769px) {
+        .section {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 40px;
+          margin: 0;
+          color: white;
+          text-align: left;
+          gap: 100px;
+        }
+
+        .section img {
+          max-width: 50%;
+          height: auto;
+        }
+
+        .section-content {
+          flex: 1;
+          padding: 20px;
+          max-width: 50%;
+        }
+        .section-1 {
+          background-color: white;
+          color: black;
+        }
+
+        .section-2 {
+          background-color: #c3ebfd;
+          color: black;
+        }
+
+        .section-2 img {
+          max-width: 50%; /* Make the image larger */
+        }
+
+        .section-3 {
+          background-color: white;
+          color: black;
+        }
       }
     </style>
   </head>
