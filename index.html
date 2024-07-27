@@ -34,7 +34,7 @@
 
       .header {
         background: transparent;
-        color: blue;
+        color: rgb(88, 126, 242);
         padding: 10px 20px; /* Adjusted padding */
         position: fixed;
         width: 100%;
@@ -57,6 +57,10 @@
         font-weight: bold;
         cursor: pointer;
       }
+      .header .logo img {
+        height: 1.6em; /* Adjust this value to match the text height */
+        vertical-align: middle; /* Ensures proper vertical alignment */
+      }
 
       .header .nav,
       .header .auth {
@@ -70,8 +74,8 @@
         border-radius: 5px;
       }
       .auth a {
-        background-color: white;
-        color: black;
+        background-color: #0073e6;
+        color: white;
         text-decoration: none;
         padding: 10px;
         border-radius: 5px;
@@ -83,6 +87,7 @@
       }
       .auth a:hover {
         background: blue;
+        color: white;
       }
       .demo-button {
         background-color: orange; /* Blue color */
@@ -92,9 +97,20 @@
         border-radius: 5px;
         text-decoration: none;
       }
+      .header .nav .demo-button {
+        color: white;
+      }
 
       .demo-button:hover {
         background-color: darkorange; /* Darker blue on hover */
+      }
+      .header .nav .demo-button:hover {
+        background-color: rgb(
+          209,
+          118,
+          7
+        ); /* Change to a different hover color */
+        color: white; /* Change text color on hover */
       }
       /* Offset the scroll position to account for the fixed header */
       #demo-request-form {
@@ -291,84 +307,119 @@
       .signup button {
         background-color: #005bb5;
       }
-      footer {
-        background: url("https://www.transparenttextures.com/patterns/asfalt.png"); /* URL to a texture pattern */
-        color: black;
-        padding: 20px 0; /* Padding around footer */
-        font-size: 1em; /* Slightly smaller font size */
-      }
-
+      /* Footer Container */
       .footer-container {
-        display: flex; /* Flexbox layout for horizontal alignment */
-        justify-content: space-between; /* Space out the sections */
-        align-items: flex-start; /* Align items to the top */
-        flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
-        width: 90%; /* Max width for the container */
-        max-width: 1200px; /* Ensure it doesn’t stretch too wide */
-        margin: 0 auto; /* Center the container horizontally */
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: #f5f5f5;
       }
+
+      /* Left Section: Logo and Description */
       .footer-left {
-        flex: 1; /* Equal width for each section */
-        margin: auto 120px; /* Space between sections */
-        font-size: 1.5em;
-        color: blue;
+        flex: 1;
+        max-width: 33%;
+        margin-right: 150px;
+        margin-left: 20px;
       }
-      .footer-center,
+
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        color: rgb(88, 126, 242); /* Color for logo text */
+        text-decoration: none; /* Remove underline */
+        margin-top: 20px;
+        font-size: 2em;
+      }
+
+      .footer-logo img {
+        height: 1.6em; /* Adjust height of the logo */
+        vertical-align: middle; /* Align logo vertically */
+        margin-right: 10px; /* Space between logo and text */
+      }
+
+      .footer-left p {
+        margin-top: 10px;
+        font: bold;
+      }
+
+      /* Center Section: Quick Links */
+      .footer-center {
+        flex: 1;
+        max-width: 33%;
+      }
+
+      .footer-center h4 {
+        margin-bottom: 10px;
+      }
+
+      .footer-center ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .footer-center li {
+        margin: 5px 0;
+      }
+
+      .footer-center a {
+        text-decoration: none;
+        color: #333;
+      }
+
+      .footer-center a:hover {
+        text-decoration: underline;
+      }
+
+      /* Right Section: Legal */
       .footer-right {
-        flex: 1; /* Equal width for each section */
-        margin: 0 0px; /* Space between sections */
+        flex: 1;
+        max-width: 33%;
       }
 
-      .footer-left h4,
-      .footer-center h4,
       .footer-right h4 {
-        margin-top: 0; /* Remove top margin */
-        margin-bottom: 15px; /* Space below heading */
-        text-decoration: underline; /* Underline the headings */
+        margin-bottom: 10px;
       }
 
-      .footer-left p,
-      .footer-center ul,
       .footer-right ul {
-        margin: 0; /* Remove default margin */
-        padding: 0; /* Remove default padding */
+        list-style-type: none;
+        padding: 0;
       }
 
-      .footer-center ul,
-      .footer-right ul {
-        list-style: none; /* Remove default list styling */
-        padding: 0; /* Remove default padding */
+      .footer-right li {
+        margin: 5px 0;
       }
 
-      .footer-center ul li,
-      .footer-right ul li {
-        margin-bottom: 10px; /* Space between list items */
-      }
-
-      .footer-center ul li::before {
-        content: "• "; /* Bullet point */
-        color: black; /* White color for bullet */
-        font-weight: bold; /* Bold bullet point */
-      }
-
-      .footer-center a,
       .footer-right a {
-        color: black; /* White color for links */
-        text-decoration: none; /* Remove underline from links */
+        text-decoration: none;
+        color: #333;
       }
 
-      .footer-center a:hover,
       .footer-right a:hover {
-        text-decoration: underline; /* Underline on hover */
+        text-decoration: underline;
       }
 
+      /* Footer Bottom */
       .footer-bottom {
-        text-align: center; /* Center the text */
-        margin-top: 20px; /* Space above the footer bottom */
+        text-align: center;
+        padding: 10px;
+        background-color: #e0e0e0;
+        font-size: 0.9em;
       }
 
-      .footer-bottom p {
-        margin: 5px 0; /* Space around the paragraph */
+      /* Mobile styles */
+      @media (max-width: 768px) {
+        .footer-container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .footer-left,
+        .footer-center,
+        .footer-right {
+          text-align: center;
+          margin: 10px 0;
+        }
       }
 
       /* Mobile styles */
@@ -389,6 +440,7 @@
         .header .auth {
           display: none; /* Hide the navigation and auth links on mobile */
         }
+
         .header.scrolled {
           background-color: white;
         }
@@ -428,24 +480,27 @@
 
         /* Stack section content vertically on mobile */
         .section {
-          flex-direction: column;
-          align-items: center; /* Center-align content */
+          flex-direction: column; /* Stack items vertically */
+          align-items: center; /* Center-align items */
           text-align: center; /* Center text */
           padding: 20px; /* Adjust padding for mobile */
-          gap: 20px; /* Space between image and text */
         }
 
         .section img {
-          max-width: 100%; /* Ensure images fit within the container */
+          width: 100%; /* Ensure images fit within the container */
+          max-width: 100%; /* Prevent images from stretching */
           height: auto; /* Maintain aspect ratio */
+          margin-bottom: 20px; /* Space below the image */
         }
 
         .section-content {
           padding: 0; /* Remove padding on mobile */
         }
+
         .section h2 {
           font-size: 2em;
         }
+
         .section p {
           font-size: 1.2em;
         }
@@ -520,6 +575,7 @@
         class="logo"
         onclick="window.location.href='https://landingpage.idrisforid.com/index.html'"
       >
+        <img src="images/logo.png" alt="Logo" />
         ALIGNED
       </div>
       <div class="nav">
@@ -690,10 +746,21 @@
 
     <footer>
       <div class="footer-container">
-        <!-- Left Section: About Aligned -->
+        <!-- Left Section: Logo and Description -->
         <div class="footer-left">
-          <h1>ALIGNED</h1>
-          <p></p>
+          <a
+            href="https://landingpage.idrisforid.com/index.html"
+            class="footer-logo"
+          >
+            <img src="images/logo.png" alt="Logo" />
+
+            ALIGNED
+          </a>
+          <p>
+            Aligned revolutionizes recruitment with advanced technology and
+            data-driven assessments, helping companies streamline hiring and
+            build diverse, high-performing teams efficiently.
+          </p>
         </div>
 
         <!-- Center Section: Quick Links -->
@@ -707,7 +774,7 @@
           </ul>
         </div>
 
-        <!-- Right Section: Help Center and Legal -->
+        <!-- Right Section: Legal -->
         <div class="footer-right">
           <h4>Legal</h4>
           <ul>
@@ -716,6 +783,8 @@
           </ul>
         </div>
       </div>
+
+      <!-- Footer Bottom: Copyright Notice -->
       <div class="footer-bottom">
         <p>&copy; 2024 Aligned. All rights reserved.</p>
       </div>
