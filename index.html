@@ -374,15 +374,15 @@
       /* Mobile styles */
       @media (max-width: 768px) {
         .header {
-          justify-content: center; /* Center the logo and toggle */
+          position: relative; /* Required for absolute positioning of the toggle */
           padding: 10px 0; /* Adjusted padding for mobile */
         }
-        .header.scrolled {
-          background-color: #ffffff;
-        }
+
         .header .logo {
-          flex: 1;
+          display: inline-block; /* Fit to the content size */
           text-align: center;
+          margin: 0 auto; /* Center the logo */
+          position: relative; /* For positioning of the menu toggle */
         }
 
         .header .nav,
@@ -392,7 +392,10 @@
 
         .menu-toggle {
           display: block; /* Show the menu toggle */
-          margin-left: auto; /* Adjust margin for mobile */
+          position: absolute; /* Absolute positioning to move it to the right */
+          right: 10px; /* Space from the right edge */
+          top: 50%; /* Center vertically relative to the header */
+          transform: translateY(-50%); /* Adjust for perfect centering */
         }
 
         .menu-popup {
@@ -529,15 +532,22 @@
         <a href="#" class="register-button"><strong>Register</strong></a>
       </div>
     </div>
+    <button class="menu-toggle" aria-label="Toggle Menu">
+      <span class="menu-icon">☰</span>
+    </button>
 
     <div class="menu-popup" id="menu-popup">
       <div class="close-menu" onclick="toggleMenu()">×</div>
-      <a href="index.html">Home</a>
-      <a href="#">Pricing</a>
-      <a href="#">Help Center</a>
-      <a href="#">Request a Demo</a>
-      <a href="login.html"><strong>Login</strong></a>
-      <a href="#"><strong>Register</strong></a>
+      <li><a href="https://landingpage.idrisforid.com/index.html">Home</a></li>
+      <li><a href="#">pricing</a></li>
+      <li><a href="helpcenter.html">Help Center</a></li>
+      <li><a href="#">Request a Demo</a></li>
+      <li>
+        <a href="login.html"><strong>Login</strong></a>
+      </li>
+      <li>
+        <a href="#"><strong>Register</strong></a>
+      </li>
     </div>
 
     <div class="page-header">
