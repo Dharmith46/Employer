@@ -389,11 +389,14 @@
         .header .auth {
           display: none; /* Hide the navigation and auth links on mobile */
         }
+        .header.scrolled {
+          background-color: white;
+        }
 
         .menu-toggle {
           display: block; /* Show the menu toggle */
           position: absolute; /* Absolute positioning to move it to the right */
-          right: 10px; /* Space from the right edge */
+          left: 20px; /* Space from the right edge */
           top: 50%; /* Center vertically relative to the header */
           transform: translateY(-50%); /* Adjust for perfect centering */
         }
@@ -532,22 +535,16 @@
         <a href="#" class="register-button"><strong>Register</strong></a>
       </div>
     </div>
-    <button class="menu-toggle" aria-label="Toggle Menu">
-      <span class="menu-icon">☰</span>
-    </button>
 
     <div class="menu-popup" id="menu-popup">
       <div class="close-menu" onclick="toggleMenu()">×</div>
-      <li><a href="https://landingpage.idrisforid.com/index.html">Home</a></li>
-      <li><a href="#">pricing</a></li>
-      <li><a href="helpcenter.html">Help Center</a></li>
-      <li><a href="#">Request a Demo</a></li>
-      <li>
-        <a href="login.html"><strong>Login</strong></a>
-      </li>
-      <li>
-        <a href="#"><strong>Register</strong></a>
-      </li>
+      <a href="https://landingpage.idrisforid.com/index.html">Home</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="helpcenter.html">Help Center</a>
+      <a href="#">Request a Demo</a>
+      <a href="login.html"><strong>Login</strong></a>
+
+      <a href="#"><strong>Register</strong></a>
     </div>
 
     <div class="page-header">
