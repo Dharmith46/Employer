@@ -422,104 +422,64 @@
         }
       }
 
-      /* Mobile styles */
+      /* Media Queries for Responsive Design */
       @media (max-width: 768px) {
         .header {
-          position: relative; /* Required for absolute positioning of the toggle */
-          padding: 10px 0; /* Adjusted padding for mobile */
+          padding: 10px 20px;
         }
-
-        .header .logo {
-          display: inline-block; /* Fit to the content size */
-          text-align: center;
-          margin: 0 auto; /* Center the logo */
-          position: relative; /* For positioning of the menu toggle */
-        }
-
         .header .nav,
         .header .auth {
-          display: none; /* Hide the navigation and auth links on mobile */
+          display: none;
         }
-
-        .header.scrolled {
-          background-color: white;
-        }
-
         .menu-toggle {
-          display: block; /* Show the menu toggle */
-          position: absolute; /* Absolute positioning to move it to the right */
-          left: 20px; /* Space from the right edge */
-          top: 50%; /* Center vertically relative to the header */
-          transform: translateY(-50%); /* Adjust for perfect centering */
+          display: block;
         }
-
         .menu-popup {
-          width: 100%; /* Full width for mobile */
-          max-width: 300px; /* Max width for menu popup */
+          width: 70%;
         }
-
         .page-header {
-          padding: 80px 10px 30px; /* Adjust padding for mobile */
+          padding: 120px 10px;
         }
-
-        .page-header h1 {
-          font-size: 1.5em; /* Adjust font size for mobile */
+        .container {
+          flex-direction: column;
+          align-items: center;
+          padding: 10px;
         }
-
-        .footer-container {
-          flex-direction: column; /* Stack sections vertically */
-          align-items: center; /* Center-align sections */
+        .card {
+          width: 90%;
         }
-
-        .footer-left,
-        .footer-center,
-        .footer-right {
-          text-align: center; /* Center-align text */
-          margin: 10px 0; /* Space between stacked sections */
+        .cta-section {
+          flex-direction: column;
         }
-
-        /* Stack section content vertically on mobile */
-        .section {
-          flex-direction: column; /* Stack items vertically */
-          align-items: center; /* Center-align items */
-          text-align: center; /* Center text */
-          padding: 20px; /* Adjust padding for mobile */
+        .cta-section div {
+          margin: 10px 0;
+          flex-direction: column;
+          align-items: center;
         }
-
-        .section img {
-          width: 100%; /* Ensure images fit within the container */
-          max-width: 100%; /* Prevent images from stretching */
-          height: auto; /* Maintain aspect ratio */
-          margin-bottom: 20px; /* Space below the image */
+      }
+      @media (max-width: 480px) {
+        .header {
+          padding: 10px;
         }
-
-        .section-content {
-          padding: 0; /* Remove padding on mobile */
+        .header .logo {
+          font-size: 1.5em;
         }
-
-        .section h2 {
-          font-size: 2em;
-        }
-
-        .section p {
+        .page-header {
+          padding: 90px 10px;
           font-size: 1.2em;
         }
-      }
-
-      /* Individual section styles */
-      .section-1 {
-        background-color: white;
-        color: black;
-      }
-
-      .section-2 {
-        background-color: #c3ebfd;
-        color: black;
-      }
-
-      .section-3 {
-        background-color: white;
-        color: black;
+        .cta-section {
+          flex-direction: column;
+          align-items: center;
+        }
+        .cta-section div {
+          width: 100%;
+          margin-bottom: 20px;
+          text-align: center;
+        }
+        .cta-section img {
+          margin-bottom: 10px;
+        }
       }
 
       /* Desktop styles */
