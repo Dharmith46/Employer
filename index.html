@@ -422,63 +422,124 @@
         }
       }
 
-      /* Media Queries for Responsive Design */
+      /* Mobile styles */
       @media (max-width: 768px) {
         .header {
-          padding: 10px 20px;
+          position: relative; /* Required for absolute positioning of the toggle */
+          padding: 10px 0; /* Adjusted padding for mobile */
         }
+
+        .header .logo {
+          display: inline-block; /* Fit to the content size */
+          text-align: center;
+          margin: 0 auto; /* Center the logo */
+          position: relative; /* For positioning of the menu toggle */
+        }
+
         .header .nav,
         .header .auth {
-          display: none;
+          display: none; /* Hide the navigation and auth links on mobile */
         }
+
+        .header.scrolled {
+          background-color: white;
+        }
+
         .menu-toggle {
-          display: block;
+          display: block; /* Show the menu toggle */
+          position: absolute; /* Absolute positioning to move it to the right */
+          left: 20px; /* Space from the right edge */
+          top: 50%; /* Center vertically relative to the header */
+          transform: translateY(-50%); /* Adjust for perfect centering */
         }
+
         .menu-popup {
-          width: 70%;
+          width: 100%; /* Full width for mobile */
+          max-width: 300px; /* Max width for menu popup */
         }
+
         .page-header {
-          padding: 120px 10px;
+          padding: 80px 10px 30px; /* Adjust padding for mobile */
         }
-        .container {
-          flex-direction: column;
-          align-items: center;
-          padding: 10px;
+
+        .page-header h1 {
+          font-size: 1.5em; /* Adjust font size for mobile */
         }
-        .card {
-          width: 90%;
+
+        .footer-container {
+          flex-direction: column; /* Stack sections vertically */
+          align-items: center; /* Center-align sections */
         }
-        .cta-section {
-          flex-direction: column;
+
+        .footer-left,
+        .footer-center,
+        .footer-right {
+          text-align: center; /* Center-align text */
+          margin: 10px 0; /* Space between stacked sections */
         }
-        .cta-section div {
-          margin: 10px 0;
-          flex-direction: column;
-          align-items: center;
+
+        /* Stack section content vertically on mobile */
+        .section {
+          display: flex;
+          flex-direction: column; /* Stack items vertically */
+          align-items: center; /* Center-align items */
+          text-align: center; /* Center text */
+          padding: 20px; /* Adjust padding for mobile */
         }
-      }
-      @media (max-width: 480px) {
-        .header {
-          padding: 10px;
+        .section img {
+          width: 100%; /* Ensure images fit within the container */
+          max-width: 100%; /* Prevent images from stretching */
+          height: auto; /* Maintain aspect ratio */
+          margin-bottom: 20px; /* Space below the image */
         }
-        .header .logo {
-          font-size: 1.5em;
+
+        .section-content {
+          padding: 0; /* Remove padding on mobile */
         }
-        .page-header {
-          padding: 90px 10px;
+
+        .section h2 {
+          font-size: 2em;
+        }
+
+        .section p {
           font-size: 1.2em;
         }
-        .cta-section {
+      }
+
+      /* Individual section styles */
+      .section-1 {
+        background-color: white;
+        color: black;
+      }
+
+      .section-2 {
+        background-color: #c3ebfd;
+        color: black;
+      }
+
+      .section-3 {
+        background-color: white;
+        color: black;
+      }
+      /* Mobile-specific ordering */
+       {
+        .section.section-1,
+        .section.section-2,
+        .section.section-3 {
+          display: flex;
           flex-direction: column;
-          align-items: center;
         }
-        .cta-section div {
-          width: 100%;
-          margin-bottom: 20px;
-          text-align: center;
+
+        .section.section-1 img,
+        .section.section-2 img,
+        .section.section-3 img {
+          order: -1; /* Place image above content */
         }
-        .cta-section img {
-          margin-bottom: 10px;
+
+        .section.section-1 .section-content,
+        .section.section-2 .section-content,
+        .section.section-3 .section-content {
+          order: 1; /* Place content below image */
         }
       }
 
