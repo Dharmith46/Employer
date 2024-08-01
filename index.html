@@ -467,14 +467,16 @@
         }
 
         .footer-container {
-          flex-direction: column; /* Stack sections vertically */
+          display: flex;
+          flex-direction: column; /* Stack footer sections vertically */
           align-items: center; /* Center-align sections */
+          padding: 20px; /* Add padding for spacing */
+          text-align: center; /* Center text in all sections */
         }
 
         .footer-left,
         .footer-center,
         .footer-right {
-          text-align: center; /* Center-align text */
           margin: 10px 0; /* Space between stacked sections */
         }
 
