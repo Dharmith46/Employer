@@ -466,23 +466,43 @@
           font-size: 1.5em; /* Adjust font size for mobile */
         }
 
-        .footer-container {
-          display: flex;
-          flex-direction: column; /* Stack footer sections vertically */
-          align-items: center; /* Center-align sections */
-          padding: 20px; /* Add padding for spacing */
-          text-align: center; /* Center text in all sections */
-        }
+        /* Mobile footer styles */
+        @media (max-width: 768px) {
+          .footer-container {
+            display: flex;
+            flex-direction: column; /* Stack footer sections vertically */
+            align-items: center; /* Center-align sections */
+            padding: 0; /* Remove padding to ensure no gaps */
+            text-align: center; /* Center text in all sections */
+          }
 
-        .footer-left,
-        .footer-center,
-        .footer-right {
-          margin: 10px 0; /* Space between stacked sections */
-        }
-        .footer-left,
-        .footer-center,
-        .footer-right {
-          width: 100%; /* Ensure each section takes full width */
+          .footer-left {
+            width: 100%; /* Make left section take full width */
+            margin: 0; /* Remove margins */
+            padding: 20px; /* Add padding for content inside */
+            background-color: #f1f1f1; /* Example background color */
+          }
+
+          .footer-center,
+          .footer-right {
+            width: 100%; /* Ensure other sections take full width */
+            margin: 5px 0; /* Space between stacked sections */
+            padding: 20px; /* Add padding for content inside */
+          }
+
+          .footer-left img,
+          .footer-center img,
+          .footer-right img {
+            display: block;
+            margin: 0 auto; /* Center the logo/image */
+          }
+
+          .footer-left p,
+          .footer-center p,
+          .footer-right p {
+            word-wrap: break-word; /* Ensure text wraps to fit the screen */
+            margin: 0 10px; /* Add side margin to prevent text from touching screen edges */
+          }
         }
 
         /* Stack section content vertically on mobile */
