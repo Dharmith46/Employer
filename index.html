@@ -543,6 +543,7 @@
 
         /* Stack section content vertically on mobile */
         .section {
+          display: flex;
           flex-direction: column; /* Stack items vertically */
           align-items: center; /* Center-align items */
           text-align: center; /* Center text */
@@ -567,24 +568,91 @@
         .section p {
           font-size: 1.2em;
         }
+
+        /* Individual section styles */
+        .section.section-1,
+        .section.section-2,
+        .section.section-3 {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .section.section-1 img,
+        .section.section-2 img,
+        .section.section-3 img {
+          order: -1; /* Place image above content */
+        }
+
+        .section.section-1 .section-content,
+        .section.section-2 .section-content,
+        .section.section-3 .section-content {
+          order: 1; /* Place content below image */
+        }
+        .section-1 {
+          background-color: white;
+          color: black;
+        }
+
+        .section-2 {
+          background-color: #c3ebfd;
+          color: black;
+        }
+
+        .section-3 {
+          background-color: white;
+          color: black;
+        }
       }
 
-      /* Individual section styles */
-      .section-1 {
-        background-color: white;
-        color: black;
-      }
+      /* Desktop styles */
+      @media (min-width: 769px) {
+        .section {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 40px;
+          margin: 0;
+          color: white;
+          text-align: left;
+          gap: 100px;
+        }
 
-      .section-2 {
-        background-color: #c3ebfd;
-        color: black;
-      }
+        .section img {
+          max-width: 50%;
+          height: auto;
+        }
 
-      .section-3 {
-        background-color: white;
-        color: black;
-      }
+        .section-content {
+          flex: 1;
+          padding: 20px;
+          max-width: 50%;
+        }
+        .section h2 {
+          font-size: 2em;
+        }
+        .section p {
+          font-size: 1.2em;
+        }
+        .section-1 {
+          background-color: white;
+          color: black;
+        }
+        /* Individual section styles */
+        .section-1 {
+          background-color: white;
+          color: black;
+        }
 
+        .section-2 {
+          background-color: #c3ebfd;
+          color: black;
+        }
+
+        .section-3 {
+          background-color: white;
+          color: black;
+        }
+      }
       /* Desktop styles */
       @media (min-width: 769px) {
         .section {
